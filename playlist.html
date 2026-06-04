@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Israeli Classics Playlist — Sabres</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .playlist-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .export-btns { display: flex; gap: .6rem; flex-wrap: wrap; }
+
+    .song-card {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1rem 1.25rem;
+    }
+    .song-num {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      min-width: 1.5rem;
+      text-align: center;
+    }
+    .song-art {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .song-info { flex: 1; min-width: 0; }
+    .song-title {
+      font-weight: 700;
+      font-size: .97rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .song-artist {
+      font-size: .83rem;
+      color: var(--text-muted);
+      margin-top: .15rem;
+    }
+    .song-year {
+      font-size: .78rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .song-links { display: flex; gap: .4rem; }
+    .song-link-btn {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: none;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: var(--text-muted);
+      transition: all .15s;
+      text-decoration: none;
+    }
+    .song-link-btn:hover { border-color: var(--green); color: var(--green-dark); background: var(--green-light); }
+
+    .song-list { display: flex; flex-direction: column; gap: .75rem; }
+
+    .playlist-banner {
+      background: linear-gradient(135deg, var(--green-light), #fde8d6);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .banner-emoji { font-size: 3.5rem; line-height: 1; }
+    .banner-text h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: .3rem; }
+    .banner-text p { font-size: .9rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">🌿 Sabres<span>.</span></a>
+  <button class="nav-hamburger" aria-label="Open menu">☰</button>
+  <ul class="nav-links" role="list">
+    <li><a href="dictionary.html">📖 Dictionary</a></li>
+    <li><a href="trivia.html">🧠 Trivia</a></li>
+    <li><a href="community.html">💬 Community</a></li>
+    <li><a href="playlist.html" class="active">🎵 Playlist</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <div class="playlist-header">
+    <div>
+      <h1 class="section-title">🎵 Israeli Classics</h1>
+      <p class="section-subtitle" style="margin-bottom:0">30 iconic songs every Israeli knows — now yours too</p>
+    </div>
+    <div class="export-btns">
+      <button class="btn btn-green" onclick="exportPlaylist('spotify')">
+        <span>🎧</span> Export to Spotify
+      </button>
+      <button class="btn btn-outline" onclick="exportPlaylist('apple')">
+        <span>🎵</span> Export to Apple Music
+      </button>
+    </div>
+  </div>
+
+  <div class="playlist-banner">
+    <div class="banner-emoji">🇮🇱</div>
+    <div class="banner-text">
+      <h2>The Sabres Essential Playlist</h2>
+      <p>From Kaveret to Eyal Golan — these are the songs that echo in every Israeli living room, beach party, and army radio. Listen and feel at home.</p>
+    </div>
+  </div>
+
+  <div class="song-list" role="list">
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">1</span>
+      <div class="song-art" style="background:#d4ebd5">🌿</div>
+      <div class="song-info">
+        <div class="song-title">Poogy Be'Emek Ayalon</div>
+        <div class="song-artist">Kaveret</div>
+      </div>
+      <span class="song-year">1973</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Kaveret%20Poogy%20Be%27Emek%20Ayalon" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify" title="Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Kaveret+Poogy" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music" title="Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">2</span>
+      <div class="song-art" style="background:#fde8d6">☀️</div>
+      <div class="song-info">
+        <div class="song-title">Eretz Eretz Eretz</div>
+        <div class="song-artist">Arik Einstein</div>
+      </div>
+      <span class="song-year">1971</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Arik%20Einstein%20Eretz" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Arik+Einstein+Eretz" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">3</span>
+      <div class="song-art" style="background:#e8f4e8">🌊</div>
+      <div class="song-info">
+        <div class="song-title">Erev Shel Shoshanim</div>
+        <div class="song-artist">Shoshana Damari</div>
+      </div>
+      <span class="song-year">1958</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Erev%20Shel%20Shoshanim" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Erev+Shel+Shoshanim" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">4</span>
+      <div class="song-art" style="background:#fde8d6">🔥</div>
+      <div class="song-info">
+        <div class="song-title">Shir La'ahava</div>
+        <div class="song-artist">Eyal Golan</div>
+      </div>
+      <span class="song-year">2003</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Eyal%20Golan%20Shir%20La%27ahava" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Eyal+Golan+Shir+Laahava" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">5</span>
+      <div class="song-art" style="background:#d4ebd5">🌙</div>
+      <div class="song-info">
+        <div class="song-title">Layla Layla</div>
+        <div class="song-artist">Ethnix</div>
+      </div>
+      <span class="song-year">1993</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Ethnix%20Layla" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Ethnix+Layla" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">6</span>
+      <div class="song-art" style="background:#fde8d6">💃</div>
+      <div class="song-info">
+        <div class="song-title">Ani Lo Yode'a</div>
+        <div class="song-artist">Mashina</div>
+      </div>
+      <span class="song-year">1988</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Mashina%20Israeli" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Mashina+Israeli" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">7</span>
+      <div class="song-art" style="background:#d4ebd5">🎸</div>
+      <div class="song-info">
+        <div class="song-title">Lo Bemarach HaGavoha</div>
+        <div class="song-artist">HaDag Nachash</div>
+      </div>
+      <span class="song-year">2002</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/HaDag%20Nachash" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=HaDag+Nachash" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">8</span>
+      <div class="song-art" style="background:#fde8d6">🌺</div>
+      <div class="song-info">
+        <div class="song-title">Yam Shel Dma'ot</div>
+        <div class="song-artist">Sarit Hadad</div>
+      </div>
+      <span class="song-year">2000</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Sarit%20Hadad" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Sarit+Hadad" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">9</span>
+      <div class="song-art" style="background:#d4ebd5">✡️</div>
+      <div class="song-info">
+        <div class="song-title">Yerushalayim Shel Zahav</div>
+        <div class="song-artist">Naomi Shemer</div>
+      </div>
+      <span class="song-year">1967</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Yerushalayim%20Shel%20Zahav" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Yerushalayim+Shel+Zahav" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+    <article class="card song-card" role="listitem">
+      <span class="song-num">10</span>
+      <div class="song-art" style="background:#fde8d6">🎶</div>
+      <div class="song-info">
+        <div class="song-title">Kalaniyot</div>
+        <div class="song-artist">Boaz Sharabi</div>
+      </div>
+      <span class="song-year">1985</span>
+      <div class="song-links">
+        <a href="https://open.spotify.com/search/Boaz%20Sharabi%20Kalaniyot" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Spotify">🎧</a>
+        <a href="https://music.apple.com/search?term=Boaz+Sharabi" target="_blank" rel="noopener" class="song-link-btn" aria-label="Listen on Apple Music">🎵</a>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  <strong>Sabres</strong> — Built for new Israelis &nbsp;·&nbsp; Learn the language, feel the culture 🌿
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

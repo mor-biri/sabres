@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Trivia — Sabres</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .trivia-wrap {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .trivia-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2rem;
+    }
+    .trivia-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    #trivia-counter {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    #trivia-question {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 1.75rem;
+      color: var(--text);
+    }
+    #trivia-options {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+    }
+    .trivia-option {
+      width: 100%;
+      text-align: left;
+      padding: .85rem 1.1rem;
+      border-radius: 10px;
+      border: 2px solid var(--border);
+      background: var(--bg);
+      font-size: .95rem;
+      color: var(--text);
+      font-weight: 500;
+      transition: border-color .15s, background .15s;
+    }
+    .trivia-option:hover:not(:disabled) {
+      border-color: var(--green);
+      background: var(--green-light);
+    }
+    .trivia-option.correct {
+      border-color: var(--green-dark);
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+    .trivia-option.correct::after { content: ' ✓'; }
+    .trivia-option.wrong {
+      border-color: #e57373;
+      background: #fdecea;
+      color: #c62828;
+    }
+    .trivia-option.wrong::after { content: ' ✗'; }
+    #trivia-explanation {
+      background: var(--green-light);
+      border-left: 4px solid var(--green-dark);
+      border-radius: 8px;
+      padding: .85rem 1rem;
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+    #trivia-next {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: .75rem;
+    }
+    .trivia-progress {
+      width: 100%;
+      height: 6px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+    }
+    .trivia-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--orange));
+      border-radius: 99px;
+      transition: width .4s ease;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">🌿 Sabres<span>.</span></a>
+  <button class="nav-hamburger" aria-label="Open menu">☰</button>
+  <ul class="nav-links" role="list">
+    <li><a href="dictionary.html">📖 Dictionary</a></li>
+    <li><a href="trivia.html" class="active">🧠 Trivia</a></li>
+    <li><a href="community.html">💬 Community</a></li>
+    <li><a href="playlist.html">🎵 Playlist</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <div style="max-width:600px;margin:0 auto 2rem;">
+    <h1 class="section-title">🧠 Daily Trivia</h1>
+    <p class="section-subtitle">Test your Hebrew & Israeli culture knowledge</p>
+  </div>
+
+  <div class="trivia-wrap">
+    <div class="trivia-card">
+      <div class="trivia-meta">
+        <span class="tag">Hebrew & Slang</span>
+        <span id="trivia-counter">Question 1 of 7</span>
+      </div>
+
+      <div class="trivia-progress" role="progressbar" aria-label="Quiz progress">
+        <div class="trivia-progress-bar" id="trivia-bar" style="width:14%"></div>
+      </div>
+
+      <p id="trivia-question"></p>
+
+      <div id="trivia-options" role="group" aria-label="Answer options"></div>
+
+      <div id="trivia-explanation" style="display:none" aria-live="polite"></div>
+
+      <button
+        id="trivia-next"
+        class="btn btn-green"
+        style="display:none"
+        onclick="nextTrivia()"
+        aria-label="Next question"
+      >Next Question →</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <strong>Sabres</strong> — Built for new Israelis &nbsp;·&nbsp; Learn the language, feel the culture 🌿
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+<script>
+  // update progress bar when next is clicked
+  const _origNext = nextTrivia;
+  nextTrivia = function() {
+    _origNext();
+    const total = 7;
+    const current = (triviaIndex % total) + 1;
+    document.getElementById('trivia-bar').style.width = (current / total * 100) + '%';
+  };
+</script>
+</body>
+</html>

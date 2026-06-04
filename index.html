@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabres — Learn Israeli Slang & Culture</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 4.5rem 1rem 3rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 99px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .hero h1 .accent { color: var(--green-dark); }
+    .hero h1 .accent2 { color: var(--orange-dark); }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+    .hero-cta { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Feature cards ── */
+    .features { margin-top: 4rem; }
+    .features-heading {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 1.75rem;
+      color: var(--text);
+    }
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .feature-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: .2rem;
+    }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; }
+    .feature-card p { font-size: .9rem; color: var(--text-muted); line-height: 1.55; }
+    .feature-card .btn { margin-top: auto; align-self: flex-start; }
+
+    /* ── Why section ── */
+    .why {
+      margin-top: 5rem;
+      background: linear-gradient(135deg, var(--green-light) 0%, #fde8d6 100%);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .why h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: .75rem; }
+    .why p { max-width: 560px; margin: 0 auto; color: var(--text-muted); line-height: 1.65; }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat-num { font-size: 2rem; font-weight: 900; color: var(--green-dark); }
+    .stat-label { font-size: .85rem; color: var(--text-muted); margin-top: .2rem; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">🌿 Sabres<span>.</span></a>
+  <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+  <ul class="nav-links" role="list">
+    <li><a href="dictionary.html">📖 Dictionary</a></li>
+    <li><a href="trivia.html">🧠 Trivia</a></li>
+    <li><a href="community.html">💬 Community</a></li>
+    <li><a href="playlist.html">🎵 Playlist</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+
+  <section class="hero">
+    <div class="hero-badge">🇮🇱 Made for new Israelis</div>
+    <h1>Speak like a <span class="accent">Sabra</span>,<br>feel like you <span class="accent2">belong</span>.</h1>
+    <p>Sabres helps young immigrants master Israeli slang, culture, and everyday language — through a smart dictionary, daily trivia, community Q&A, and iconic playlists.</p>
+    <div class="hero-cta">
+      <a href="dictionary.html" class="btn btn-green">📖 Explore the Dictionary</a>
+      <a href="trivia.html" class="btn btn-outline">🧠 Take Today's Trivia</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2 class="features-heading">Everything you need to fit in 🙌</h2>
+    <div class="grid-2">
+      <article class="card feature-card">
+        <div class="feature-icon">📖</div>
+        <h3>Slang Dictionary</h3>
+        <p>Search hundreds of Hebrew slang words with transliterations, English meanings, and real example sentences.</p>
+        <a href="dictionary.html" class="btn btn-green">Open Dictionary →</a>
+      </article>
+
+      <article class="card feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>Daily Trivia</h3>
+        <p>Test your Hebrew knowledge with daily trivia questions on slang, culture, and language. Learn while you play.</p>
+        <a href="trivia.html" class="btn btn-green">Play Trivia →</a>
+      </article>
+
+      <article class="card feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Community Q&A</h3>
+        <p>Ask anything. Get answers from fellow immigrants and native Israelis. No question is too small or too weird.</p>
+        <a href="community.html" class="btn btn-orange">Join Community →</a>
+      </article>
+
+      <article class="card feature-card">
+        <div class="feature-icon">🎵</div>
+        <h3>Israeli Classics Playlist</h3>
+        <p>Discover iconic Israeli songs that every local knows. Export directly to Spotify or Apple Music and vibe in.</p>
+        <a href="playlist.html" class="btn btn-orange">Open Playlist →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="why" aria-label="Why Sabres">
+    <h2>Why Sabres?</h2>
+    <p>Moving to a new country is hard enough. Learning the unwritten rules — the slang, the humor, the culture — takes years. Sabres fast-tracks that journey so you feel at home, sooner.</p>
+    <div class="stats">
+      <div>
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Slang terms</div>
+      </div>
+      <div>
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Trivia questions</div>
+      </div>
+      <div>
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Classic Israeli songs</div>
+      </div>
+      <div>
+        <div class="stat-num">∞</div>
+        <div class="stat-label">New friendships</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Sabres</strong> — Built for new Israelis &nbsp;·&nbsp; Learn the language, feel the culture 🌿
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

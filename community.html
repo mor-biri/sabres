@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Q&A — Sabres</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .community-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .q-card { display: flex; gap: 1rem; align-items: flex-start; }
+    .q-votes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .25rem;
+      min-width: 44px;
+    }
+    .upvote-btn {
+      background: none;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      width: 44px;
+      height: 44px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .15s, background .15s, color .15s;
+      color: var(--text-muted);
+    }
+    .upvote-btn:hover { border-color: var(--orange); color: var(--orange-dark); }
+    .upvote-btn.voted { border-color: var(--orange-dark); background: #fde8d6; color: var(--orange-dark); }
+    .vote-count { font-size: .85rem; font-weight: 700; color: var(--text-muted); }
+    .q-body { flex: 1; }
+    .q-title { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; color: var(--text); }
+    .q-title a:hover { color: var(--green-dark); text-decoration: underline; }
+    .q-preview { font-size: .88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: .6rem; }
+    .q-meta {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: .8rem;
+      color: var(--text-muted);
+    }
+    .q-answers {
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-weight: 700;
+      padding: .15rem .55rem;
+      border-radius: 6px;
+      font-size: .78rem;
+    }
+    .filters {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+    }
+    .filter-btn {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 99px;
+      padding: .35rem .9rem;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all .15s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+    .q-list { display: flex; flex-direction: column; gap: 1rem; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">🌿 Sabres<span>.</span></a>
+  <button class="nav-hamburger" aria-label="Open menu">☰</button>
+  <ul class="nav-links" role="list">
+    <li><a href="dictionary.html">📖 Dictionary</a></li>
+    <li><a href="trivia.html">🧠 Trivia</a></li>
+    <li><a href="community.html" class="active">💬 Community</a></li>
+    <li><a href="playlist.html">🎵 Playlist</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <div class="community-header">
+    <div>
+      <h1 class="section-title">💬 Community Q&A</h1>
+      <p class="section-subtitle" style="margin-bottom:0">Ask anything about Hebrew, slang, or Israeli life</p>
+    </div>
+    <button class="btn btn-orange" onclick="openAskModal()" aria-haspopup="dialog">+ Ask a Question</button>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter questions">
+    <button class="filter-btn active" onclick="setFilter(this,'all')">All</button>
+    <button class="filter-btn" onclick="setFilter(this,'slang')">Slang</button>
+    <button class="filter-btn" onclick="setFilter(this,'culture')">Culture</button>
+    <button class="filter-btn" onclick="setFilter(this,'daily')">Daily Life</button>
+    <button class="filter-btn" onclick="setFilter(this,'grammar')">Grammar</button>
+  </div>
+
+  <div class="q-list" role="list" aria-label="Questions">
+
+    <article class="card q-card" role="listitem" data-tags="slang">
+      <div class="q-votes">
+        <button class="upvote-btn" onclick="upvote(this)" aria-pressed="false" aria-label="Upvote question">▲</button>
+        <span class="vote-count">24</span>
+      </div>
+      <div class="q-body">
+        <h2 class="q-title"><a href="#">What's the difference between "Sababa" and "Achla"?</a></h2>
+        <p class="q-preview">Both seem to mean "cool" or "great" — are they interchangeable or is there a nuance I'm missing?</p>
+        <div class="q-meta">
+          <span class="tag">Slang</span>
+          <span class="q-answers">✓ 8 answers</span>
+          <span>asked by Lena M. · 2 days ago</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card q-card" role="listitem" data-tags="culture">
+      <div class="q-votes">
+        <button class="upvote-btn" onclick="upvote(this)" aria-pressed="false" aria-label="Upvote question">▲</button>
+        <span class="vote-count">19</span>
+      </div>
+      <div class="q-body">
+        <h2 class="q-title"><a href="#">Why do Israelis say "Yalla bye" on the phone?</a></h2>
+        <p class="q-preview">I keep hearing this at the end of calls — it's a mix of Arabic and English. Is this normal?</p>
+        <div class="q-meta">
+          <span class="tag tag-orange">Culture</span>
+          <span class="q-answers">✓ 12 answers</span>
+          <span>asked by Daniel K. · 4 days ago</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card q-card" role="listitem" data-tags="daily">
+      <div class="q-votes">
+        <button class="upvote-btn" onclick="upvote(this)" aria-pressed="false" aria-label="Upvote question">▲</button>
+        <span class="vote-count">15</span>
+      </div>
+      <div class="q-body">
+        <h2 class="q-title"><a href="#">How do I politely refuse food when someone keeps offering?</a></h2>
+        <p class="q-preview">My neighbor insists I eat even after I've said I'm full. Is there a culturally appropriate way to decline?</p>
+        <div class="q-meta">
+          <span class="tag">Daily Life</span>
+          <span class="q-answers">✓ 6 answers</span>
+          <span>asked by Sofia R. · 1 week ago</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card q-card" role="listitem" data-tags="slang">
+      <div class="q-votes">
+        <button class="upvote-btn" onclick="upvote(this)" aria-pressed="false" aria-label="Upvote question">▲</button>
+        <span class="vote-count">11</span>
+      </div>
+      <div class="q-body">
+        <h2 class="q-title"><a href="#">What does it mean when someone calls me a "Frayer"?</a></h2>
+        <p class="q-preview">A coworker said this jokingly — should I be offended? Is it always negative?</p>
+        <div class="q-meta">
+          <span class="tag">Slang</span>
+          <span class="q-answers">✓ 9 answers</span>
+          <span>asked by Marco B. · 1 week ago</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="card q-card" role="listitem" data-tags="grammar">
+      <div class="q-votes">
+        <button class="upvote-btn" onclick="upvote(this)" aria-pressed="false" aria-label="Upvote question">▲</button>
+        <span class="vote-count">8</span>
+      </div>
+      <div class="q-body">
+        <h2 class="q-title"><a href="#">When do I use "Bevakasha" vs "Toda"?</a></h2>
+        <p class="q-preview">I know toda is thank you, and bevakasha seems to be please — but Israelis use bevakasha as a response to thank you too?</p>
+        <div class="q-meta">
+          <span class="tag tag-orange">Grammar</span>
+          <span class="q-answers">✓ 5 answers</span>
+          <span>asked by Aisha T. · 2 weeks ago</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- Ask modal -->
+<div id="ask-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAskModal()" aria-label="Close dialog">✕</button>
+    <h2 id="modal-title">Ask the Community</h2>
+    <form onsubmit="submitQuestion(event)">
+      <div class="form-group">
+        <label for="q-title-input">Your question</label>
+        <input id="q-title-input" type="text" placeholder="e.g. What does 'nu' mean?" required />
+      </div>
+      <div class="form-group">
+        <label for="q-body-input">Details (optional)</label>
+        <textarea id="q-body-input" placeholder="Add more context here…"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="q-tag-select">Category</label>
+        <select id="q-tag-select">
+          <option value="slang">Slang</option>
+          <option value="culture">Culture</option>
+          <option value="daily">Daily Life</option>
+          <option value="grammar">Grammar</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;">Post Question</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <strong>Sabres</strong> — Built for new Israelis &nbsp;·&nbsp; Learn the language, feel the culture 🌿
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+<script>
+  function setFilter(btn, tag) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.q-list .q-card').forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tags.includes(tag)) ? '' : 'none';
+    });
+  }
+  // close modal on overlay click
+  document.getElementById('ask-modal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeAskModal();
+  });
+</script>
+</body>
+</html>

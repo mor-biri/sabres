@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slang Dictionary — Sabres</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .dict-card { display: flex; flex-direction: column; gap: .4rem; }
+    .dict-hebrew {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--green-dark);
+      direction: rtl;
+      font-family: 'David Libre', 'Frank Ruhl Libre', serif;
+    }
+    .dict-trans {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--orange-dark);
+    }
+    .dict-meaning {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .dict-example {
+      font-size: .85rem;
+      color: var(--text-muted);
+      font-style: italic;
+      border-left: 3px solid var(--green-light);
+      padding-left: .65rem;
+      margin-top: .25rem;
+    }
+    .no-results { color: var(--text-muted); font-size: 1rem; padding: 1rem 0; }
+    .dict-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .dict-count {
+      color: var(--text-muted);
+      font-size: .9rem;
+      margin-top: .25rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">🌿 Sabres<span>.</span></a>
+  <button class="nav-hamburger" aria-label="Open menu">☰</button>
+  <ul class="nav-links" role="list">
+    <li><a href="dictionary.html" class="active">📖 Dictionary</a></li>
+    <li><a href="trivia.html">🧠 Trivia</a></li>
+    <li><a href="community.html">💬 Community</a></li>
+    <li><a href="playlist.html">🎵 Playlist</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <div class="dict-header">
+    <div>
+      <h1 class="section-title">📖 Slang Dictionary</h1>
+      <p class="section-subtitle" style="margin-bottom:0">Search Hebrew slang, transliterations & meanings</p>
+    </div>
+  </div>
+
+  <div class="search-wrap" role="search">
+    <span class="search-icon" aria-hidden="true">🔍</span>
+    <input
+      type="search"
+      id="dict-search"
+      placeholder="Search slang… e.g. sababa, cool, friend"
+      aria-label="Search slang dictionary"
+      autocomplete="off"
+    />
+  </div>
+
+  <div id="dict-grid" class="grid-2" role="list" aria-live="polite" aria-label="Slang results"></div>
+</main>
+
+<footer>
+  <strong>Sabres</strong> — Built for new Israelis &nbsp;·&nbsp; Learn the language, feel the culture 🌿
+</footer>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

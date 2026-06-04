@@ -33,11 +33,15 @@
       width: 52px;
       height: 52px;
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
+      overflow: hidden;
       flex-shrink: 0;
+      background: var(--green-light);
+    }
+    .song-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .song-info { flex: 1; min-width: 0; }
     .song-title {
@@ -129,7 +133,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">1</span>
-      <div class="song-art" style="background:#d4ebd5">🌿</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/43/fd/b4/43fdb4b9-ff2b-6c92-dceb-83cb8284fb01/Kaveret-Cover_cd.jpg/300x300bb.jpg" alt="Kaveret album art" /></div>
       <div class="song-info">
         <div class="song-title">Poogy Be'Emek Ayalon</div>
         <div class="song-artist">Kaveret</div>
@@ -143,7 +147,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">2</span>
-      <div class="song-art" style="background:#fde8d6">☀️</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/87/75/ba/8775ba5c-d219-cbac-af01-4298089bba41/cover.jpg/300x300bb.jpg" alt="Arik Einstein album art" /></div>
       <div class="song-info">
         <div class="song-title">Eretz Eretz Eretz</div>
         <div class="song-artist">Arik Einstein</div>
@@ -157,7 +161,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">3</span>
-      <div class="song-art" style="background:#e8f4e8">🌊</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/5c/ae/e2/5caee243-45c2-e0d8-a373-17af47f2fdb3/HaDudaim_-_maaraz.jpg/300x300bb.jpg" alt="Erev Shel Shoshanim album art" /></div>
       <div class="song-info">
         <div class="song-title">Erev Shel Shoshanim</div>
         <div class="song-artist">Shoshana Damari</div>
@@ -171,7 +175,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">4</span>
-      <div class="song-art" style="background:#fde8d6">🔥</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ab/e1/84/abe1845a-0daa-2931-c0de-1288f1e25ce4/Rakhok_Mchan.jpg/300x300bb.jpg" alt="Eyal Golan album art" /></div>
       <div class="song-info">
         <div class="song-title">Shir La'ahava</div>
         <div class="song-artist">Eyal Golan</div>
@@ -185,7 +189,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">5</span>
-      <div class="song-art" style="background:#d4ebd5">🌙</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/62/e9/52/62e9524e-c77e-6ee7-6608-f69c5f756720/5059812059893.jpg/300x300bb.jpg" alt="Ethnix album art" /></div>
       <div class="song-info">
         <div class="song-title">Layla Layla</div>
         <div class="song-artist">Ethnix</div>
@@ -199,7 +203,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">6</span>
-      <div class="song-art" style="background:#fde8d6">💃</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ed/dc/58/eddc5893-e624-6234-b155-956ea688ce2b/asset.jpg/300x300bb.jpg" alt="Mashina album art" /></div>
       <div class="song-info">
         <div class="song-title">Ani Lo Yode'a</div>
         <div class="song-artist">Mashina</div>
@@ -213,7 +217,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">7</span>
-      <div class="song-art" style="background:#d4ebd5">🎸</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music127/v4/0c/67/2c/0c672ca2-1800-0ea7-7aa6-7967a05b6038/829410869171.jpg/300x300bb.jpg" alt="HaDag Nachash album art" /></div>
       <div class="song-info">
         <div class="song-title">Lo Bemarach HaGavoha</div>
         <div class="song-artist">HaDag Nachash</div>
@@ -227,7 +231,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">8</span>
-      <div class="song-art" style="background:#fde8d6">🌺</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b7/7d/c9/b77dc92f-4767-bab2-33c0-71eda44b4187/7290010321001.png/300x300bb.jpg" alt="Sarit Hadad album art" /></div>
       <div class="song-info">
         <div class="song-title">Yam Shel Dma'ot</div>
         <div class="song-artist">Sarit Hadad</div>
@@ -241,7 +245,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">9</span>
-      <div class="song-art" style="background:#d4ebd5">✡️</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/80/97/87/80978730-6fb3-848c-365b-81a0a8eceba8/cover.jpg/300x300bb.jpg" alt="Yerushalayim Shel Zahav album art" /></div>
       <div class="song-info">
         <div class="song-title">Yerushalayim Shel Zahav</div>
         <div class="song-artist">Naomi Shemer</div>
@@ -255,7 +259,7 @@
 
     <article class="card song-card" role="listitem">
       <span class="song-num">10</span>
-      <div class="song-art" style="background:#fde8d6">🎶</div>
+      <div class="song-art"><img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/42/60/79/426079f4-2627-e474-1760-40256589caea/7293372513022.png/300x300bb.jpg" alt="Boaz Sharabi album art" /></div>
       <div class="song-info">
         <div class="song-title">Kalaniyot</div>
         <div class="song-artist">Boaz Sharabi</div>

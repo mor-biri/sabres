@@ -67,46 +67,64 @@ function initDictionary() {
 /* ── Trivia ────────────────────────────────────────────────── */
 const TRIVIA = [
   {
-    q: 'What does "Sababa" (סבבה) mean?',
-    options: ['Danger', 'Cool / OK', 'Hungry', 'Tired'],
+    q: 'You text your Israeli friend about weekend plans and they reply "סבבה" (Sababa). What do they mean?',
+    options: ['They\'re busy and can\'t make it', 'Sounds good, they\'re in', 'They need more details', 'They\'re running late'],
     correct: 1,
-    explanation: 'Sababa is one of the most common Israeli slang words, meaning everything is great or fine.'
+    explanation: 'Sababa means "cool" or "all good" — your friend is on board! It\'s one of the most used words in Israeli daily conversation.'
   },
   {
-    q: 'Which Hebrew letter comes first in the alphabet?',
-    options: ['Bet', 'Alef', 'Gimel', 'Dalet'],
-    correct: 1,
-    explanation: 'Alef (א) is the first letter of the Hebrew alphabet.'
-  },
-  {
-    q: '"Balagan" (בלגן) originally comes from which language?',
-    options: ['Arabic', 'Yiddish', 'Russian', 'Turkish'],
+    q: 'Your coworker says you\'re a "פרייאר" (Frayer) for paying full price at the shuk. What are they calling you?',
+    options: ['A generous tipper', 'A smart shopper', 'A sucker who got ripped off', 'A loyal customer'],
     correct: 2,
-    explanation: 'Balagan comes from Russian (балаган), meaning a fair stall or farce, and entered Hebrew meaning chaos.'
+    explanation: 'A frayer is someone who gets taken advantage of. In Israeli culture, haggling is expected — paying full price at the market without negotiating is the classic frayer move.'
   },
   {
-    q: 'What does "Yalla" (יאללה) mean in everyday Israeli speech?',
-    options: ["Let's go / Come on", 'Goodbye', 'Welcome', 'Help!'],
+    q: 'A colleague ends every phone call with "יאללה ביי" (Yalla bye). What does this phrase come from?',
+    options: ['Two Hebrew words', 'Arabic + English', 'Russian + Hebrew', 'Yiddish + English'],
+    correct: 1,
+    explanation: '"Yalla" comes from Arabic (يلا) meaning "let\'s go," and "bye" is English. This mix perfectly reflects Israeli street language — casual, fast, and multicultural.'
+  },
+  {
+    q: 'Your neighbor invites you in and keeps refilling your plate even after you said you\'re full. This is an example of:',
+    options: ['Bad manners in Israeli culture', 'A classic expression of Israeli hospitality', 'A hint that you should leave', 'A religious custom'],
+    correct: 1,
+    explanation: 'In Israeli culture, insisting guests eat more is a deep expression of hospitality and warmth. Saying "lo toda" (no thank you) several times is totally normal — your host expects it!'
+  },
+  {
+    q: 'Which iconic song, written by Naomi Shemer in 1967, became an unofficial anthem of Jerusalem?',
+    options: ['Eretz Eretz Eretz', 'Erev Shel Shoshanim', 'Yerushalayim Shel Zahav', 'Layla Layla'],
+    correct: 2,
+    explanation: '"Jerusalem of Gold" (ירושלים של זהב) was written just before the Six-Day War and became one of the most beloved Israeli songs ever. Every Israeli knows every word.'
+  },
+  {
+    q: 'Someone describes their friend as talking "דוגרי" (Dugri). What does this say about how they communicate?',
+    options: ['They speak very quietly', 'They are very funny', 'They are blunt and direct', 'They speak too fast'],
+    correct: 2,
+    explanation: 'Dugri means straight-talking, no beating around the bush. Israelis are famously dugri — they\'ll tell you exactly what they think. It\'s considered a virtue, not rudeness.'
+  },
+  {
+    q: 'You join a WhatsApp group of Israeli colleagues. Within minutes it\'s full of voice messages, memes, and 47 unread texts. This chaos is best described as:',
+    options: ['Balagan', 'Dugri', 'Sababa', 'Frayer'],
     correct: 0,
-    explanation: 'Yalla, borrowed from Arabic, is used to urge someone to hurry up or to say "let\'s go."'
+    explanation: 'Balagan (בלגן) means total chaos or mess — originally from Russian. An Israeli WhatsApp group is the ultimate balagan, and locals wouldn\'t have it any other way.'
   },
   {
-    q: 'What is a "Frayer" (פרייאר)?',
-    options: ['A street food vendor', 'Someone who gets taken advantage of', 'A type of bread', 'A close friend'],
-    correct: 1,
-    explanation: 'In Israeli culture, being a frayer (a sucker) is something to avoid at all costs — people are very conscious of not being seen as one.'
-  },
-  {
-    q: 'How do you say "thank you" in Hebrew?',
-    options: ['Shalom', 'Bevakasha', 'Toda', 'Lehitraot'],
+    q: 'What does "אחלה" (Achla) mean when an Israeli says it after tasting your cooking?',
+    options: ['It needs more salt', 'It\'s just okay', 'It\'s amazing / excellent', 'I\'m still hungry'],
     correct: 2,
-    explanation: '"Toda" (תודה) means thank you. "Toda raba" means thank you very much.'
+    explanation: 'Achla (from Arabic أحلى) means awesome or excellent. If an Israeli says "achla ochel!" about your food, you nailed it — that\'s the highest compliment at the table.'
   },
   {
-    q: 'What does "Dugri" (דוגרי) mean?',
-    options: ['A type of food', 'Speaking straight / being blunt', 'A neighborhood in Tel Aviv', 'Very hot weather'],
+    q: 'The word "חוצפה" (Chutzpah) is used worldwide. What does it actually mean in Israeli culture?',
+    options: ['Extreme shyness', 'Audacity / boldness verging on impudence', 'Great cooking', 'Deep wisdom'],
     correct: 1,
-    explanation: 'Dugri means speaking directly and honestly — Israelis are known for their dugri communication style.'
+    explanation: 'Chutzpah means audacity or nerve — doing something bold without shame. In Yiddish and Hebrew it\'s often negative, but in modern usage it can mean admirable guts too.'
+  },
+  {
+    q: 'It\'s Friday afternoon in Israel. Shops close early, traffic is crazy, and everyone\'s rushing home. What are they preparing for?',
+    options: ['A football match', 'Shabbat (the Jewish Sabbath)', 'A national holiday', 'The weekly market'],
+    correct: 1,
+    explanation: 'Shabbat starts Friday at sundown and ends Saturday night. It\'s the heartbeat of Israeli weekly life — even secular Israelis gather for family dinners. "Shabbat Shalom!" is the greeting you\'ll hear all day Friday.'
   },
 ];
 

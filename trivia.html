@@ -159,7 +159,7 @@
   const _origNext = nextTrivia;
   nextTrivia = function() {
     _origNext();
-    const total = 7;
+    const total = 10;
     const current = (triviaIndex % total) + 1;
     document.getElementById('trivia-bar').style.width = (current / total * 100) + '%';
   };

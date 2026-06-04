@@ -67,64 +67,53 @@ function initDictionary() {
 /* ── Trivia ────────────────────────────────────────────────── */
 const TRIVIA = [
   {
-    q: 'You text your Israeli friend about weekend plans and they reply "סבבה" (Sababa). What do they mean?',
-    options: ['They\'re busy and can\'t make it', 'Sounds good, they\'re in', 'They need more details', 'They\'re running late'],
+    // Easy
+    q: '😎 Level 1 — Your new Israeli friend texts back "סבבה" (Sababa). What do they mean?',
+    options: ['I\'m busy, can\'t make it', 'Sounds great, I\'m in!', 'Where are you?', 'Call me later'],
     correct: 1,
-    explanation: 'Sababa means "cool" or "all good" — your friend is on board! It\'s one of the most used words in Israeli daily conversation.'
+    explanation: 'Sababa = "cool" / "all good." It\'s the most common positive word in Israeli slang — you\'ll hear it dozens of times a day.'
   },
   {
-    q: 'Your coworker says you\'re a "פרייאר" (Frayer) for paying full price at the shuk. What are they calling you?',
-    options: ['A generous tipper', 'A smart shopper', 'A sucker who got ripped off', 'A loyal customer'],
+    // Easy
+    q: '🏃 Level 2 — Your roommate shouts "יאללה!" (Yalla) while you\'re still getting ready. What do they want?',
+    options: ['Sit down and relax', 'Hurry up, let\'s go!', 'Be quiet please', 'Come eat dinner'],
+    correct: 1,
+    explanation: 'Yalla (from Arabic يلا) means "let\'s go" or "come on." It\'s the Israeli way of saying "move it!" — used dozens of times a day, often doubled: "Yalla yalla!"'
+  },
+  {
+    // Medium
+    q: '🛒 Level 3 — You paid full price for a watermelon at the shuk without haggling. Your friend shakes their head and calls you a "פרייאר" (Frayer). What did you just do wrong?',
+    options: ['You bought a bad watermelon', 'You forgot to say thank you', 'You let yourself get ripped off', 'You cut the line'],
     correct: 2,
-    explanation: 'A frayer is someone who gets taken advantage of. In Israeli culture, haggling is expected — paying full price at the market without negotiating is the classic frayer move.'
+    explanation: 'A frayer is a sucker — someone who gets taken advantage of. In Israeli culture, not haggling is basically an invitation to be overcharged. Never be a frayer at the shuk!'
   },
   {
-    q: 'A colleague ends every phone call with "יאללה ביי" (Yalla bye). What does this phrase come from?',
-    options: ['Two Hebrew words', 'Arabic + English', 'Russian + Hebrew', 'Yiddish + English'],
+    // Medium
+    q: '💬 Level 4 — An Israeli colleague says they\'ll give you feedback "דוגרי" (Dugri). Should you brace yourself?',
+    options: ['No — it means they\'ll be gentle and diplomatic', 'Yes — it means they\'ll be brutally honest and direct', 'It means they\'ll send it in writing', 'It means they\'ll ask someone else to tell you'],
     correct: 1,
-    explanation: '"Yalla" comes from Arabic (يلا) meaning "let\'s go," and "bye" is English. This mix perfectly reflects Israeli street language — casual, fast, and multicultural.'
+    explanation: 'Dugri means straight-talking, no sugar-coating. Israelis wear it as a badge of honor. It can feel blunt to newcomers, but it\'s meant as respect — they\'re not wasting your time.'
   },
   {
-    q: 'Your neighbor invites you in and keeps refilling your plate even after you said you\'re full. This is an example of:',
-    options: ['Bad manners in Israeli culture', 'A classic expression of Israeli hospitality', 'A hint that you should leave', 'A religious custom'],
-    correct: 1,
-    explanation: 'In Israeli culture, insisting guests eat more is a deep expression of hospitality and warmth. Saying "lo toda" (no thank you) several times is totally normal — your host expects it!'
-  },
-  {
-    q: 'Which iconic song, written by Naomi Shemer in 1967, became an unofficial anthem of Jerusalem?',
-    options: ['Eretz Eretz Eretz', 'Erev Shel Shoshanim', 'Yerushalayim Shel Zahav', 'Layla Layla'],
+    // Medium
+    q: '🌀 Level 5 — You walk into an Israeli office on a Monday morning: phones ringing, three conversations happening at once, someone\'s dog is there, and no one knows where the meeting is. One word sums this up perfectly:',
+    options: ['Sababa', 'Magniv', 'Balagan', 'Achi'],
     correct: 2,
-    explanation: '"Jerusalem of Gold" (ירושלים של זהב) was written just before the Six-Day War and became one of the most beloved Israeli songs ever. Every Israeli knows every word.'
+    explanation: 'Balagan (בלגן) = total chaos / glorious mess, originally from Russian. It\'s not always negative — many Israelis thrive in the balagan. "Ze balagan gadol" = "this is a huge mess."'
   },
   {
-    q: 'Someone describes their friend as talking "דוגרי" (Dugri). What does this say about how they communicate?',
-    options: ['They speak very quietly', 'They are very funny', 'They are blunt and direct', 'They speak too fast'],
-    correct: 2,
-    explanation: 'Dugri means straight-talking, no beating around the bush. Israelis are famously dugri — they\'ll tell you exactly what they think. It\'s considered a virtue, not rudeness.'
-  },
-  {
-    q: 'You join a WhatsApp group of Israeli colleagues. Within minutes it\'s full of voice messages, memes, and 47 unread texts. This chaos is best described as:',
-    options: ['Balagan', 'Dugri', 'Sababa', 'Frayer'],
-    correct: 0,
-    explanation: 'Balagan (בלגן) means total chaos or mess — originally from Russian. An Israeli WhatsApp group is the ultimate balagan, and locals wouldn\'t have it any other way.'
-  },
-  {
-    q: 'What does "אחלה" (Achla) mean when an Israeli says it after tasting your cooking?',
-    options: ['It needs more salt', 'It\'s just okay', 'It\'s amazing / excellent', 'I\'m still hungry'],
-    correct: 2,
-    explanation: 'Achla (from Arabic أحلى) means awesome or excellent. If an Israeli says "achla ochel!" about your food, you nailed it — that\'s the highest compliment at the table.'
-  },
-  {
-    q: 'The word "חוצפה" (Chutzpah) is used worldwide. What does it actually mean in Israeli culture?',
-    options: ['Extreme shyness', 'Audacity / boldness verging on impudence', 'Great cooking', 'Deep wisdom'],
+    // Hard
+    q: '🧠 Level 6 — Match the slang to the situation: someone is being overly generous, optimistic, and a little naive about a business deal. Israelis would most likely say they are being…',
+    options: ['Dugri', 'A Frayer', 'Achla', 'Chutzpan'],
     correct: 1,
-    explanation: 'Chutzpah means audacity or nerve — doing something bold without shame. In Yiddish and Hebrew it\'s often negative, but in modern usage it can mean admirable guts too.'
+    explanation: 'Being a frayer isn\'t just about money — it applies to any situation where you\'re seen as too trusting or letting others take advantage. Israeli street-smartness is all about NOT being the frayer in the room.'
   },
   {
-    q: 'It\'s Friday afternoon in Israel. Shops close early, traffic is crazy, and everyone\'s rushing home. What are they preparing for?',
-    options: ['A football match', 'Shabbat (the Jewish Sabbath)', 'A national holiday', 'The weekly market'],
-    correct: 1,
-    explanation: 'Shabbat starts Friday at sundown and ends Saturday night. It\'s the heartbeat of Israeli weekly life — even secular Israelis gather for family dinners. "Shabbat Shalom!" is the greeting you\'ll hear all day Friday.'
+    // Hard
+    q: '🏆 Level 7 — Which of these phrases is NOT real Israeli slang?',
+    options: ['"Yalla bye" — ending a phone call', '"Sababa magniv" — double compliment meaning super cool', '"Frayer balagan" — a chaotic sucker', '"Walla" — expressing genuine surprise or emphasis'],
+    correct: 2,
+    explanation: '"Frayer balagan" is not a real phrase — you wouldn\'t combine them like that. But the others are all real: "Yalla bye" ends calls, "Sababa magniv" is a real double compliment, and "Walla" (from Arabic والله) is used constantly to mean "wow" or "seriously?"'
   },
 ];
 

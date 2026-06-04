@@ -26,14 +26,10 @@ const SLANG = [
   { term: 'סבבה', trans: 'Sababa', meaning: 'Cool / OK / Great', example: '"The plan? Sababa." — Everything is fine.' },
   { term: 'יאללה', trans: "Yalla", meaning: "Let's go / Come on", example: '"Yalla, we are going to be late!"' },
   { term: 'אחלה', trans: 'Achla', meaning: 'Awesome / Excellent', example: '"That falafel was achla."' },
-  { term: 'ואחד', trans: "V'ekhad", meaning: 'And one — emphasis of something being top notch', example: '"That was a meal v\'ekhad."' },
-  { term: 'חאבר', trans: 'Khaver', meaning: 'Friend / Buddy', example: '"Hey khaver, what are you up to tonight?"' },
   { term: 'בלגן', trans: 'Balagan', meaning: 'Chaos / Mess', example: '"The traffic downtown is a total balagan."' },
   { term: 'פרייאר', trans: 'Frayer', meaning: 'A sucker / someone who gets taken advantage of', example: '"Do not be a frayer — negotiate the price."' },
   { term: 'דוגרי', trans: 'Dugri', meaning: 'Straight talk / being blunt', example: '"Tell me dugri — do you like it or not?"' },
   { term: 'נודניק', trans: 'Nudnik', meaning: 'An annoying, pestering person', example: '"That nudnik called me five times today."' },
-  { term: 'ביגוד', trans: 'Bigod', meaning: 'Wow / No way (mild oath)', example: '"Bigod, you actually finished the whole pizza?"' },
-  { term: 'ווי', trans: 'Wai', meaning: 'Oh my / Oh no (exclamation)', example: '"Wai, I totally forgot my keys."' },
   { term: 'מגניב', trans: 'Magniv', meaning: 'Cool / Awesome', example: '"That concert was magniv."' },
 ];
 

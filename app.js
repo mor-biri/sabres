@@ -119,26 +119,20 @@ const TRIVIA = [
 
 let triviaIndex = 0;
 let answered = false;
+let triviaScore = 0;
 
 function initTrivia() {
   if (!document.getElementById('trivia-question')) return;
-  shuffleTrivia();
   renderTrivia();
 }
 
-function shuffleTrivia() {
-  for (let i = TRIVIA.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [TRIVIA[i], TRIVIA[j]] = [TRIVIA[j], TRIVIA[i]];
-  }
-}
-
 function renderTrivia() {
-  const q = TRIVIA[triviaIndex % TRIVIA.length];
+  const total = TRIVIA.length;
+  const q = TRIVIA[triviaIndex];
   answered = false;
 
   document.getElementById('trivia-question').textContent = q.q;
-  document.getElementById('trivia-counter').textContent = `Question ${(triviaIndex % TRIVIA.length) + 1} of ${TRIVIA.length}`;
+  document.getElementById('trivia-counter').textContent = `Question ${triviaIndex + 1} of ${total}`;
   document.getElementById('trivia-explanation').style.display = 'none';
   document.getElementById('trivia-next').style.display = 'none';
 
@@ -151,7 +145,10 @@ function renderTrivia() {
 function answerTrivia(chosen) {
   if (answered) return;
   answered = true;
-  const q = TRIVIA[triviaIndex % TRIVIA.length];
+  const q = TRIVIA[triviaIndex];
+  const correct = chosen === q.correct;
+  if (correct) triviaScore++;
+
   document.querySelectorAll('.trivia-option').forEach((btn, i) => {
     btn.disabled = true;
     if (i === q.correct) btn.classList.add('correct');
@@ -159,11 +156,75 @@ function answerTrivia(chosen) {
   });
   document.getElementById('trivia-explanation').textContent = q.explanation;
   document.getElementById('trivia-explanation').style.display = 'block';
-  document.getElementById('trivia-next').style.display = 'inline-flex';
+
+  const isLast = triviaIndex === TRIVIA.length - 1;
+  const nextBtn = document.getElementById('trivia-next');
+  nextBtn.textContent = isLast ? 'See My Results 🎯' : 'Next Question →';
+  nextBtn.style.display = 'inline-flex';
 }
 
 function nextTrivia() {
+  if (triviaIndex === TRIVIA.length - 1) {
+    showResults();
+    return;
+  }
   triviaIndex++;
+  const pct = ((triviaIndex) / TRIVIA.length) * 100;
+  document.getElementById('trivia-bar').style.width = pct + '%';
+  renderTrivia();
+}
+
+function showResults() {
+  const total = TRIVIA.length;
+  const pct = Math.round((triviaScore / total) * 100);
+
+  document.getElementById('trivia-bar').style.width = '100%';
+
+  // Hide quiz, show results
+  document.getElementById('trivia-question').style.display = 'none';
+  document.getElementById('trivia-options').style.display = 'none';
+  document.getElementById('trivia-explanation').style.display = 'none';
+  document.getElementById('trivia-next').style.display = 'none';
+  document.getElementById('trivia-counter').style.display = 'none';
+  document.querySelector('.trivia-meta').style.display = 'none';
+
+  document.getElementById('result-correct').textContent = triviaScore;
+  document.getElementById('result-wrong').textContent = total - triviaScore;
+  document.getElementById('result-pct').textContent = pct + '%';
+  document.getElementById('result-score').textContent = `${triviaScore}/${total}`;
+
+  let emoji, label, msg;
+  if (pct === 100) {
+    emoji = '🏆'; label = 'Perfect Score! Sababa!';
+    msg = 'You nailed every question — you are basically an honorary Israeli. Next step: argue about hummus recipes and say "Yalla bye" on every phone call.';
+  } else if (pct >= 71) {
+    emoji = '🎉'; label = 'Great job — almost a Tzabar!';
+    msg = 'You clearly paid attention. A few more shuk visits and some late-night falafel runs and you will fit right in.';
+  } else if (pct >= 43) {
+    emoji = '📖'; label = 'Not bad — keep learning!';
+    msg = 'You know the basics but there is more slang to absorb. Spend some time in the dictionary and give it another shot.';
+  } else {
+    emoji = '🌱'; label = 'Just getting started!';
+    msg = 'No worries — everyone starts somewhere. Browse the slang dictionary, then come back and crush this quiz.';
+  }
+
+  document.getElementById('result-emoji').textContent = emoji;
+  document.getElementById('result-label').textContent = label;
+  document.getElementById('result-msg').textContent = msg;
+  document.getElementById('trivia-results').style.display = 'block';
+}
+
+function restartTrivia() {
+  triviaIndex = 0;
+  triviaScore = 0;
+
+  document.getElementById('trivia-results').style.display = 'none';
+  document.getElementById('trivia-question').style.display = '';
+  document.getElementById('trivia-options').style.display = '';
+  document.getElementById('trivia-counter').style.display = '';
+  document.querySelector('.trivia-meta').style.display = '';
+  document.getElementById('trivia-bar').style.width = (1 / TRIVIA.length * 100) + '%';
+
   renderTrivia();
 }
 

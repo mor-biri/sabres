@@ -99,6 +99,45 @@
       border-radius: 99px;
       transition: width .4s ease;
     }
+
+    /* ── Results screen ── */
+    #trivia-results {
+      display: none;
+      text-align: center;
+      padding: 1rem 0 .5rem;
+    }
+    .result-emoji { font-size: 3.5rem; line-height: 1; margin-bottom: 1rem; }
+    .result-score {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--green-dark);
+      margin-bottom: .3rem;
+    }
+    .result-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    .result-msg {
+      color: var(--text-muted);
+      font-size: .95rem;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .result-breakdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.75rem;
+    }
+    .result-stat { text-align: center; }
+    .result-stat-num { font-size: 1.6rem; font-weight: 900; }
+    .result-stat-num.correct { color: var(--green-dark); }
+    .result-stat-num.wrong   { color: #e57373; }
+    .result-stat-lbl { font-size: .8rem; color: var(--text-muted); margin-top: .15rem; }
   </style>
 </head>
 <body>
@@ -144,6 +183,31 @@
         onclick="nextTrivia()"
         aria-label="Next question"
       >Next Question →</button>
+
+      <!-- Results screen (shown after last question) -->
+      <div id="trivia-results" aria-live="polite">
+        <div class="result-emoji" id="result-emoji">🎉</div>
+        <div class="result-score" id="result-score">0/7</div>
+        <div class="result-label" id="result-label"></div>
+        <p class="result-msg" id="result-msg"></p>
+        <div class="result-breakdown">
+          <div class="result-stat">
+            <div class="result-stat-num correct" id="result-correct">0</div>
+            <div class="result-stat-lbl">Correct</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat-num wrong" id="result-wrong">0</div>
+            <div class="result-stat-lbl">Incorrect</div>
+          </div>
+          <div class="result-stat">
+            <div class="result-stat-num" id="result-pct" style="color:var(--orange-dark)">0%</div>
+            <div class="result-stat-lbl">Score</div>
+          </div>
+        </div>
+        <button class="btn btn-green" onclick="restartTrivia()" style="width:100%;justify-content:center;font-size:1rem;padding:.8rem">
+          🔄 Try Again
+        </button>
+      </div>
     </div>
   </div>
 </main>
@@ -154,15 +218,5 @@
 
 <div id="toast"></div>
 <script src="app.js"></script>
-<script>
-  // update progress bar when next is clicked
-  const _origNext = nextTrivia;
-  nextTrivia = function() {
-    _origNext();
-    const total = 10;
-    const current = (triviaIndex % total) + 1;
-    document.getElementById('trivia-bar').style.width = (current / total * 100) + '%';
-  };
-</script>
 </body>
 </html>
